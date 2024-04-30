@@ -1,0 +1,512 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Set background image */
+body {
+    background-image: url('turf\ img5.webp'); /* Replace 'sports_background_image.jpg' with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keep the background image fixed while scrolling */
+    position: relative; /* Set position to relative for proper stacking order */
+}
+/* Overlay styles */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the transparency (alpha) value as needed */
+}
+/* Outer box styles */
+.outer-box {
+    border: 8px solid transparent; /* Green border */
+    border-radius: 0px; /* Rounded corners */
+    padding: 5px; /* Add padding */
+    background-color: transparent; /* Light gray background */
+    z-index: 1;
+}
+
+/* Inner box styles */
+.inner-box {
+    background-color: rgb(183 255 189 / 80%); /* White background */
+    padding: 20px; /* Add padding */
+    border-radius: 12px; /* Rounded corners */
+    z-index: 2;
+    opacity: 0.94;
+}
+
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styles */
+.logo {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    margin-top: -2px;
+    margin-bottom: -29px;
+}
+
+/* Navigation styles */
+
+nav ul {
+    list-style-type: none;
+    margin: -24px;
+    padding: 1px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: self-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 700px;
+    margin-top: -26px;
+}
+
+nav ul li {
+    margin-right: 20px; /* Add space between navigation items */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last navigation item */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333; /* Text color */
+    padding: 10px 20px; /* Padding for each navigation item */
+    border-radius: 8px; /* Rounded corners */
+}
+
+nav ul li a:hover {
+    background-color: #d6d6d6; /* Hover background color */
+}
+
+/* Button styles */
+.button {
+    background-color: #79ff49; /* Green background */
+    color: #333; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 20px; /* Rounded corners */
+    text-decoration: none;
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+    box-shadow: 9px 6px 5px rgba(159, 159, 159, 10); /* Initial shadow */
+    position: relative; /* Position for the pseudo-element */
+}
+
+.button::before {
+    content: '';
+    display: inline-block;
+    width: 0.5px; /* Width of the line */
+    height: 90%; /* Height of the line */
+    background-color: #ababab; /* Color of the line */
+    position: absolute; /* Position the line absolutely */
+    top: -0.0000001; /* Align the line to the top */
+    left: -20px; /* Position the line to the left of the button */
+    bottom: 0.000001px;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 0px rgba(12, 12, 12, 20); /* Shadow on hover */
+}
+
+/* Your existing styles */
+
+/* Content layout */
+.content {
+    margin: 12px;
+    border-radius: 12px 12px 0 0;
+    border: 1.5px solid #acacac;
+    padding: 20px;
+    background-color: #bfffd0;
+    overflow: hidden;
+    display: flex;
+    opacity: 0.94;
+    margin-bottom: -35px;
+}
+
+.left-part {
+    flex: 2;
+    padding: 20px;
+}
+
+.right-part {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Stars rating */
+.stars {
+    color: gold;
+}
+
+/* Rate Venue link */
+.rate-link {
+    margin-top: 10px;
+    /*display: block;*/
+}
+.Slideshow-Container{
+    max-width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+.slider {
+    position: relative;
+    width: 100%; /* Set a fixed width for the slider */
+    max-width: 800px; /* Example fixed width */
+    height: 400px; /* Example fixed height */
+    overflow: hidden; /* Hide overflow if images are larger */
+}
+
+.slides {
+    display: flex; /* Display images in a row */
+    width: 100%; /* Ensure slider takes full width */
+    transition: transform 0.5s ease; /* Add smooth transition for sliding */
+}
+
+.slides img {
+    width: 100%; /* Set width to 100% of container */
+    height: 100%; /* Set height to 100% of container */
+    object-fit: cover; /* Ensure the image covers the entire slide */
+}
+
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    z-index: 100;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Numbered buttons */
+/* Numbered buttons */
+.dot-container {
+    position: absolute;
+    bottom: 10px; /* Adjust the position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.dot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #79ff49;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #888888;
+}
+
+
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+.sports-available {
+    margin-top: 20px; /* Adjust margin as needed */
+    margin-right: 1px; /* Add margin to the right */
+    border-radius: 12px;
+    border: 1px solid #ccc; /* Add border */
+    padding: 10px; /* Add padding */
+    display: flex; /* Display children elements in a row */
+    flex-wrap: wrap; /*Allow wrapping of sports boxes */
+    flex-direction: column; /* Arrange items vertically */
+    box-shadow: 4px 6px 11px rgba(159, 159, 159, 10); /* Initial shadow */
+    background-color: #f1ffdbd1;
+}
+
+.sport {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center;
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+    box-shadow: 4px 6px 11px rgba(159, 159, 159, 10); /* Initial shadow */
+    position: relative; /* Position for the pseudo-element */
+    margin-right: 600px;
+    margin-bottom: 10px; /* Adjust margin as needed */
+    margin-top: 10px;
+    border-radius:8px;
+    border:1px solid #c7bcbc;
+    padding: 10px;
+}
+
+.sport img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px; /* Adjust margin as needed */
+}
+.amenities {
+    margin-top: 20px; /* Adjust margin as needed */
+    border-radius: 12px;
+    border: 1px solid #ccc; /* Add border */
+    padding: 10px; /* Add padding */
+    display: flex; /* Display children elements in a row */
+    flex-wrap: wrap; /* Allow wrapping of amenity boxes */
+    flex-direction: row; /* Arrange items horizontally */
+    box-shadow: 4px 6px 11px rgba(159, 159, 159, 10); /* Initial shadow */
+    background-color: #f1ffdbd1;
+}
+
+.amenities-available {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center;
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+    box-shadow: 4px 6px 11px rgba(159, 159, 159, 10); /* Initial shadow */
+    position: relative; /* Position for the pseudo-element */
+    margin-top: 50px;
+    margin-left: -143px;
+    margin-right: 179px; /* Adjust margin as needed */
+    margin-bottom: 10px; /* Adjust margin as needed */
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    padding: 10px;
+}
+
+.amenities-available img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    margin-right: 10px; /* Adjust margin as needed */
+}
+.about-venue{
+    margin-top: 20px; /* Adjust margin as needed */
+    border-radius: 12px;
+    border: 1px solid #ccc; /* Add border */
+    padding: 10px; /* Add padding */
+    display: flex; /* Display children elements in a row */
+    flex-wrap: wrap; /* Allow wrapping of amenity boxes */
+    flex-direction: column; /* Arrange items horizontally */
+    box-shadow: 4px 6px 11px rgba(159, 159, 159, 10); /* Initial shadow */
+    background-color: #f1ffdbd1;
+
+}
+.venue-info{
+    margin: 20px;
+}
+
+/* CSS for the right part box */
+.right-part {
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #dbdbdb;
+    background-color: #e2e2e2;
+    margin-left: 20px; /* Add margin to separate from left part */
+    margin-top: 112px;
+    margin-bottom: 641px;
+    background-color: #f1ffdbd1;
+}
+
+
+.form-box {
+    margin-bottom: 20px; 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 29PX;
+}
+
+
+.form-box label {
+    
+    margin-bottom: 5px; 
+    margin-top: 19px;
+}
+
+
+.form-box select {
+    width: 196px; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-bottom: 9px; 
+    margin-left: 152px;
+    margin-top: -34px;
+}
+/* .date-option{
+    width: 250px;
+    padding: 2px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    margin-left: 63px;
+    margin-top: 17px;
+} */
+.date-option input{
+    width: 196px;
+    margin-left: 152px;
+    border: 1px solid #ffffff;
+    margin-bottom: -6px;
+    margin-top: -38px;
+}
+
+
+/* .form-box input[type="date"] {
+    width: calc(100% - 26px); 
+    padding: 12px; 
+    border-radius: 5px; 
+    border: 1px solid #ffffff; 
+    box-sizing: border-box; 
+} */
+
+
+/* .form-box input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: transparent; 
+    width: 24px; 
+    height: 24px; 
+    cursor: pointer; 
+} */
+.right-part button {
+    display: block; 
+    margin: 0 auto; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #4CAF50; 
+    color: white; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    margin-top: 75PX;
+}
+
+
+.right-part button:hover {
+    background-color: #45a049; 
+}
+
+.timer-box {
+    margin-bottom: 20px; 
+}
+
+.timer-container pb-4 pt-3 {
+    display: flex; 
+    align-items: center; 
+}
+
+.timer-container input[type="number"] {
+    width: 59px; 
+    margin-right: 5px; 
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    text-align: center; 
+    margin-left: 104PX;
+    margin-top: -5PX;
+}
+
+/* .timer-container button {
+    width: 30px; 
+    height: 30px; 
+    background-color: #ccc; 
+    border: none; 
+    border-radius: 50%; 
+    cursor: pointer;
+} */
+
+.price-box {
+    margin-top: 20px; 
+}
+
+.price-box p {
+    margin-bottom: 5px; 
+}
+
+/* .price-box p#price {
+    font-weight: bold; 
+} */
+.form-box select {
+    
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+.form-box select#status {
+    
+    border: none; 
+    background-color: #ffffff; 
+    padding: 8px 10px; 
+    appearance: none; 
+    -webkit-appearance: none; 
+    
+}
+
+.form-box select#status option {
+    
+    border-radius: 8px; 
+    padding: 8px 10px; 
+    
+}
+footer {
+    background-color: #9fffc4cf;
+    padding: 102px;
+    margin-top: 10px;
+    width: 98%;
+    margin-left: 13px;
+    border-radius: 12px;
+    margin-bottom: 11px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #333;
+    margin-right: 20px;
+}
+
+.footer-link:last-child {
+    margin-right: 0;
+}
+.maps-embedd{
+    margin-bottom: 20px; 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 700PX;
+    margin-left: -389px;
+}

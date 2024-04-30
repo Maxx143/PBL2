@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.7); 
+        }
+
+        .booking-form {
+            background-color: #bfffd0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 529px;
+            width: 159%;
+            height: 442px;
+            opacity: 0.84;
+        }
+
+        .form-group {
+            margin-bottom: 38px;
+            display: flex;
+            margin-top: 12px;
+        }
+
+        label {
+            display: flex;
+            font-weight: bold;
+            flex-direction: column;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 184px;
+            margin-top: 90px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        #qr-code {
+            display: none;
+            margin-top: 10px;
+            max-width: 100%;
+            width: 100px; 
+            height: 100px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-form">
+        <h2 style="
+        height: 55px;
+        width: 570px;
+        width: 582px;
+    ">Turf Name</h2>
+        <form action="payment_confirmation.html" method="POST">
+            <div class="form-group" style="width:590px; height:18px;">
+                <label for="payment-mode" style="width: 129px; height: 52px;">Payment Mode:</label><br>
+                <input type="radio" id="cash" name="payment-mode" value="cash" style="height: 18px;">
+                <label for="cash" style="width: 60px; height: 25px;">CASH</label><br>
+                <input type="radio" id="upi" name="payment-mode" value="upi">
+                <label for="upi" style="width: 80px;">VIA UPI</label><br>
+                <input type="radio" id="net-banking" name="payment-mode" value="net-banking">
+                <label for="net-banking">NET BANKING</label><br>
+               
+            </div>
+            <img id="qr-code" src="qr-code.webp" alt="QR Code">
+            <div class="form-group">
+                <label for="total-payment" style="width: 128px; height: 22px;">Total Payment:</label>
+                <input type="text" id="total-payment" name="total-payment" readonly style="border-right-width:2px; height:22.83186px; width: 176.83186;">
+                
+            </div>
+            <button class="btn btn-primary"><a href="paycon.html" class="button-link">Make Payment</a></button>
+
+        </form>
+    </div>
+    <script>
+        
+        var upiRadio = document.getElementById("upi");
+       
+        var qrCode = document.getElementById("qr-code");
+
+        
+        upiRadio.addEventListener("change", function() {
+            
+            if (upiRadio.checked) {
+                qrCode.style.display = "block";
+            } else {
+                qrCode.style.display = "none";
+            }
+        });
+
+        
+        var paymentModeRadios = document.querySelectorAll('input[name="payment-mode"]');
+
+        
+        paymentModeRadios.forEach(function(radio) {
+            radio.addEventListener("change", function() {
+                
+                if (!upiRadio.checked) {
+                    qrCode.style.display = "none";
+                }
+            });
+        });
+        function getPricePerHourFromURL() {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('cost');
+        }
+
+        
+        function setTotalPayment() {
+            var pricePerHour = getPricePerHourFromURL();
+            document.getElementById("total-payment").value = pricePerHour;
+        }
+         
+        
+        window.onload = setTotalPayment;
+        function confirmVenue() {
+        
+        var sportsName = document.getElementById('name').value;
+        var date = document.getElementById('email').value;
+        var time = document.getElementById('status').value;
+        var hours = document.getElementById('timer').value;
+        
+        var confrimLink = `paycon.html?sportsName=${sportsName}&date=${date}&time=${time}&hours=${hours}`;
+        
+        window.location.href = confrimLink;
+}
+    </script>
+</body>
+</html>

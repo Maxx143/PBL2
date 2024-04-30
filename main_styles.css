@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #202020; /* Dark background color */
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 25px;
+    border-radius: 0px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8BC34A; /* Light green text color */
+}
+
+nav a:hover {
+    background-color: #374151; /* Darker background color on hover */
+    padding: 15px;
+    border-radius: 25px;
+}
+
+nav a.active {
+    background-color: #374151; /* Darker background color for active link */
+    padding: 15px;
+    border-radius: 25px;
+}
+
+#search {
+    margin-left: auto;
+}
+
+#search-input {
+    padding: 4px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.container {
+  margin: 15px;
+  max-width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.block {
+  margin: auto;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.images {
+  width: auto;
+  height: 20vh;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+.images:hover {
+  transform: scale(1.1);
+}
+.background {
+    position: relative;
+    display: inline-block; /* Ensures that the container wraps around the image */
+}
+.background img{
+    width:100vw;
+    opacity: 0.8;
+}
+
+.content {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 44px;
+    font-weight: bold;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.btn{
+   position: absolute;
+    top: 70%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 44px;
+    font-weight: bold;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+button{
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgb(205, 217, 92);
+    color: rgb(255, 255, 255);
+    font-size: large;
+}
+/* .foot{
+    background-color: gray;
+    height: 25vh;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 25px ;
+
+}
+.foots ul li{
+    list-style-type: none;
+    font-size: large;
+}
+#browsers{
+    background-color: aliceblue;
+} */
+.foot {
+    background-color: #333; /* Dark gray background */
+    padding: 30px; /* Spacing inside the footer */
+    display: flex;
+    justify-content: space-around;
+    color: #fff; /* Text color */
+}
+
+.foots {
+    flex: 1; /* Each section takes equal space */
+}
+
+.foots h3 {
+    font-size: 1.2rem; /* Heading size */
+    margin-bottom: 15px; /* Spacing below heading */
+    color: #8BC34A;
+}
+
+.foots ul {
+    padding: 0;
+}
+
+.foots ul li {
+    list-style-type: none;
+    font-size: 1rem; /* List item size */
+    margin-bottom: 8px; /* Spacing between list items */
+}
+
+/* Social media icons */
+.foots ul li i {
+    margin-right: 5px; /* Spacing between icon and text */
+}
+
+/* Terms and Conditions link */
+.foots.Terms p a {
+    color: #fff; /* Link color */
+    text-decoration: underline; /* Underline the link */
+}
+
+/* Hover effect on Terms and Conditions link */
+.foots.Terms p a:hover {
+    color: #ffca28; /* Change link color on hover */
+}
+
+.footer img {
+        width: 24px; /* Adjust image width */
+        height: 24px; /* Adjust image height */
+        margin-right: 10px; /* Add space between icons */
+}

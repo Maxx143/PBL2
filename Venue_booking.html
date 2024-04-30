@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsConnect</title>
+    <link rel="stylesheet" href="Venue_booking_styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+</head>
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            <header>
+                <div class="logo">Company Logo</div>
+                <nav>
+                    <ul style="
+                        width:502px;
+                        height:52px
+                        ">
+                        <li><a href="#">Events</a></li>
+                        <li><a href="main.html">Home</a></li>
+                        <li><a href="login.html" class="button">Login/Signup</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="left-part">
+            <h2>Venue Name</h2>
+            <p>Rating: <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> <a href="FeedbackForm.html" class="rate-link">Rate Venue</a></p>
+            <div class="Slideshow-Container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="truf images.webp" alt="Image 1">
+                        <img src="turf img2.webp" alt="Image 2">
+                        <img src="turf img3.webp" alt="Image 3">
+                        <img src="turf img4.webp" alt="Image 4">
+                        <img src="turf img5.webp" alt="Image 5">
+                        
+                    </div>
+                    
+                    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    
+                    
+                    <div class="dot-container">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                            
+                    </div>
+                    </div>
+            </div>
+            <div class="sports-available">
+                <h2>Sports Available</h2>
+                <div class="sport">
+                    <img src="cricket.jpg" alt="Sport Icon">
+                    <p>Cricket</p>
+                </div>
+                <div class="sport">
+                    <img src="football.jpg" alt="Sport Icon">
+                    <p>Football</p>
+                </div>
+            </div>
+            <div class="amenities">
+                <h2>Amenities</h2>
+                <div class="amenities-available">
+                    <img src="checkbox.jpg" alt="checkbox">
+                    <p>Parking</p>
+                </div>
+                <div class="amenities-available">
+                    <img src="checkbox.jpg" alt="checkbox">
+                    <p>Refreshments</p>
+                </div>
+
+            </div>
+            <div class="about-venue">
+                <h2>About Venue</h2>
+                <div class="venue-info">
+                    <div class="football">
+                        <h5>Football:</h5>
+                        <p>- It is recommended but not compulsory to wear football studs while playing at the facility.</p>
+                        <p>- Metal studs are not allowed.</p>
+                    </div> 
+                    <div class="cricket">
+                        <h5>Cricket:</h5>
+                        <p>- Use all the protective accessories</p>
+                    </div>   
+                </div>
+            </div>
+
+        </div>
+        <div class="right-part">
+            <h1 class="form-heading">Turf Name</h1>
+            <form id="addUserForm">
+                <div class="form-box">
+                    <div class="mb-3">
+                        <label for="name">Sports: </label>
+                        <select id="name" name="name" class="form-control">
+                            <option value="" disabled selected>Select the sport</option>
+                            <option value="1">Cricket</option>
+                            <option value="2">Football</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="form-box">
+                    <label for="sport">Sport:</label>                    
+                    <select id="sport" name="sport">
+                        <option value="" disabled selected hidden>Select Sports...</option>
+                        <option value="cricket">Cricket</option>
+                        <option value="football">Football</option>
+                        <option value="cricket">Cricket</option>
+                    </select>
+                </div> -->
+                <div class="date-option">
+                    <div class="mb-3">
+                        <label for="email">Date</label>
+                        <input type="date" class="form-control" id="email" />
+                        <p id="emailErrMsg" class="error-message"></p>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="mb-3">
+                        <label for="status">Select Time</label>
+                        <select id="status" class="form-control">
+                            <option value="" disabled selected>Select the time</option>
+                            <option value="12pm">12am-1am</option>
+                            <option value="12am">1am-2am</option>
+                            <option value="12pm">2am-3am</option>
+                            <option value="12pm">3am-4am</option>
+                            <option value="12pm">4am-5am</option>
+                            <option value="12pm">5am-6am</option>
+                            <option value="12pm">6am-7am</option>
+                            <option value="12pm">7am-8am</option>
+                            <option value="12pm">8am-9am</option>
+                            <option value="12pm">9am-10am</option>
+                            <option value="12pm">10am-11am</option>
+                            <option value="12pm">11am-12pm</option>
+                            <option value="12pm">12pm-1pm</option>
+                            <option value="12pm">1pm-2pm</option>
+                            <option value="12pm">2pm-3pm</option>
+                            <option value="12pm">3pm-4pm</option>
+                            <option value="12pm">4pm-5pm</option>
+                            <option value="12pm">5pm-6pm</option>
+                            <option value="12pm">6pm-7pm</option>
+                            <option value="12pm">7pm-8pm</option>
+                            <option value="12pm">8pm-9pm</option>
+                            <option value="12pm">9pm-10pm</option>
+                            <option value="12pm">10pm-11pm</option>
+                            <option value="12pm">11pm-12pm</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-container pb-4 pt-3" style="margin-top: -19px;">
+                        <label for="timer">Timer:</label>
+                        <input type="number" id="timer" name="timer" min="1" max="24" step="1" class="time">
+                    </div>
+                </div>
+                
+                <div class="price-box">
+                    <p>Price per Hour: <span id="cost" style="margin-left: 42PX;">900 INR</span></p>
+                    
+                </div>
+                <button class="btn btn-primary"><a href="booking.html" class="button-link">Book Venue</a></button>
+
+
+
+            </form>
+                <!-- <div class="form-box">
+                    <label for="start-time">Start Time:</label>
+                    <div class="time-option">
+                        <input type="time" id="start-time" name="start-time" placeholder="Select Start time:">
+                    </div>
+                </div> -->
+                <!-- <div class="form-box">
+                    <label for="slots">Select Time:</label>
+                    <select id="slots" name="slots">
+                        <option value="" disabled selected hidden>Available Slots:</option>
+                        <option value="11.00am">11.00AM</option>
+                        <option value="12.00am">12.00AM</option>
+                    </select>
+                </div>
+                <div class="timer-box">
+                    <label for="timer">Timer:</label>
+                    <div class="timer-container">
+                        <input type="number" id="timer" name="timer" min="0" max="24" step="1">
+                        <button class="up-arrow">&#9650;</button>
+                        <button class="down-arrow">&#9660;</button>
+                    </div>
+                </div>
+                <div class="price-box">
+                    <p>Price per Hour:</p>
+                    <p id="price">10$</p> Initial price, update dynamically based on timer -->
+                <!-- </div> -->
+                <!-- <div class="form-box">
+                    <label for="otherDate">Or Enter Date Directly</label>
+                    <input type="text" id="otherDate" name="otherDate" placeholder="DD-MM-YYYY">
+                </div> -->
+            <!-- Right part content goes here -->
+            
+        </div>
+        <div class="maps-embedd">
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="500" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=T12+turf&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://www.analarmclock.com/">online alarm clock</a><br>
+            <a href="https://timenowin.net/"></a><br>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                    height: 400px; 
+                    width: 500px; 
+                }
+            </style>
+            <a href="https://www.embedmaps.co">location map</a>
+            <style>
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 400px; 
+                    width: 400px; 
+                }
+            </style>
+        </div>
+    </div>
+</div>
+
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#" class="footer-link">About</a>
+                <a href="#" class="footer-link">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+

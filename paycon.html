@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+        }
+
+        .confirmation-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-box">
+        <h2>Congratulations! Your slot has been booked</h2>
+        <div class="details">
+           
+        </div>
+        <img id="qr-code" src="qr-code.webp" alt="QR Code">
+        <p>Your unique ID: <span id="unique-id"></span></p>
+    </div>
+
+    <script>
+        
+        function getDataFromIndexPage() {
+            
+            var urlParams = new URLSearchParams(window.location.search);
+            
+            
+            var sportsName = urlParams.get('name');
+            var time = urlParams.get('status');
+            var hours = urlParams.get('timer');
+            var date = urlParams.get('email');
+            var cost = urlParams.get('cost');
+
+            
+            var data = {
+                sportsName: sportsName,
+                time: time,
+                hours: hours,
+                date: date,
+                cost: cost
+            };
+            return data;
+        }
+
+        
+        function displayData() {
+            var data = getDataFromIndexPage();
+
+            var detailsDiv = document.querySelector('.details');
+            detailsDiv.innerHTML = `
+                <p><strong>Sports Name:</strong> Cricket</p>
+                <p><strong>Time:</strong> 8am-9am</p>
+                <p><strong>Hours:</strong> 1</p>
+                <p><strong>Date:</strong> 15-04-2024</p>
+                <p><strong>Price per Hour:</strong> 900 INR</p>
+            `;
+
+            
+            var uniqueId = Math.floor(Math.random() * 1000000);
+            document.getElementById('unique-id').textContent = uniqueId;
+        }
+
+        
+        window.onload = displayData;
+    </script>
+</body>
+</html>

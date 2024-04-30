@@ -1,0 +1,101 @@
+/* Custom CSS to enhance the appearance of the cards */
+        .venue-card {
+        background-color: #202020; /* Dark background color */
+        color: #fff; /* Text color */
+        transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+        }
+
+        .venue-card img {
+        filter: brightness(70%); /* Adjust image brightness */
+        }
+
+        .venue-card h3 {
+        color: #4CAF50; /* Greenish text color */
+        }
+
+        .venue-card .badge {
+        background-color: #8BC34A; /* Light green background color */
+        color: #202020; /* Dark text color */
+        }
+
+        .venue-card .rating {
+        color: #FFEB3B; /* Yellow text color for ratings */
+        }
+
+        /* Glow effect on hover */
+        .venue-card:hover {
+        transform: translateY(-5px); /* Move the card slightly upwards */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+
+    
+       /* Navigation bar styles */
+        .navbar {
+        background-color: #202020; /* Dark background color */
+        color: #fff; /* Text color */
+        padding: 10px;
+        }
+
+        .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        }
+
+        .navbar li {
+        margin-right: 20px;
+        }
+
+        .navbar li:last-child {
+        margin-right: 0;
+        margin-left: auto; /* Push the search input to the right */
+        }
+
+        .navbar a {
+        text-decoration: none;
+        color: #fff;
+        }
+
+        .navbar input[type="text"] {
+        padding: 5px;
+        border-radius: 10px;
+        border: none;
+        background-color: #ffffff; /* Light green background color */
+        color: #202020; /* Dark text color */
+        }
+        
+        /* Footer styles */
+        .footer {
+        background-color: #202020; /* Dark background color */
+        color: #8BC34A; /* Light green text color */
+        padding: 20px 0; /* Add padding to top and bottom */
+        text-align: center; /* Center align text */
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        .footer a {
+        color: #8BC34A; /* Light green link color */
+        text-decoration: none; /* Remove underline */
+        }
+
+        .footer a:hover {
+        text-decoration: underline; /* Underline on hover */
+        color: #8BC34A;
+        }
+
+        .footer img {
+        width: 24px; /* Adjust image width */
+        height: 24px; /* Adjust image height */
+        margin-right: 10px; /* Add space between icons */
+        }
+
+        /* Dark mode */
+        .dark .footer {
+        background-color: #374151; /* Dark background color */
+        color: #D1D5DB; /* Light text color */
+        }
+
+        .dark .footer a {
+        color: #ffffff; /* Light blue link color */
+        }
